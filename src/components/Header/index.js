@@ -1,9 +1,9 @@
+import {Component} from 'react'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoMdCloseCircle} from 'react-icons/io'
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
-import {Component} from 'react'
 
 class Header extends Component {
   state = {

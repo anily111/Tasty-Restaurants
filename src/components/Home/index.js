@@ -1,8 +1,13 @@
 import {MdOutlineSort} from 'react-icons/md'
+import {BsSearch} from 'react-icons/bs'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import HomeOffers from '../HomeOffers'
+import RestaurantCard from '../RestaurantCard'
+import Pagination from '../Pagination'
+import Footer from '../Footer'
 
 import './index.css'
 
@@ -32,6 +37,7 @@ class Home extends Component {
     apiStatus: apiStatusConstants.initial,
     searchInput: '',
     sortBy: sortByOptions[0].id,
+    totalPages: 0,
   }
 
   componentDidMount() {
@@ -54,8 +60,7 @@ class Home extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok) {
       const data = await response.json()
-      console.log(data)
-      const {restaurants} = data
+      const {restaurants, total} = data
       const updatedData = restaurants.map(eachRestaurant => ({
         hasOnlineDelivery: eachRestaurant.has_online_delivery,
         userRating: {
@@ -79,6 +84,7 @@ class Home extends Component {
       this.setState({
         restaurentsList: updatedData,
         apiStatus: apiStatusConstants.success,
+        totalPages: total,
       })
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
@@ -89,11 +95,31 @@ class Home extends Component {
     this.setState({searchInput: event.target.value})
   }
 
-  loadingView = () => {}
+  loadingView = () => {
+    ;<div
+      className="offers-loader-container"
+      data-testid="restaurants-list-loader"
+    >
+      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    </div>
+  }
 
-  successView = () => {}
+  successView = () => {
+    const {restaurentsList} = this.state
+    return (
+      <div className="restaurants-list">
+        {restaurentsList.map(eachRestaurant => (
+          <RestaurantCard details={eachRestaurant} key={eachRestaurant.id} />
+        ))}
+      </div>
+    )
+  }
 
-  failureView = () => {}
+  failureView = () => {
+    ;<div className="offers-failure-container">
+      <h1 className="no-offers-heading">NO AVAILABLE RESTAURANTS</h1>
+    </div>
+  }
 
   renderRestaurents = () => {
     const {apiStatus} = this.state
@@ -113,8 +139,12 @@ class Home extends Component {
     this.setState({sortBy: event.target.value})
   }
 
+  onEnterSearchInput = () => {
+    this.getRestaurents()
+  }
+
   render() {
-    const {sortBy} = this.state
+    const {sortBy, searchInput, totalPages} = this.state
     return (
       <div className="home-container">
         <Header />
@@ -146,8 +176,30 @@ class Home extends Component {
               </select>
             </div>
           </div>
+          <div className="search-container">
+            <input
+              type="search"
+              value={searchInput}
+              className="search-input"
+              placeholder="Search"
+              onChange={this.onChangeSearchInput}
+            />
+            <button
+              type="button"
+              className="search-button"
+              onClick={this.onEnterSearchInput}
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
+          <hr className="horizontal-line" />
           {this.renderRestaurents()}
+          <Pagination
+            totalPages={totalPages}
+            paginationHandler={this.getRestaurents}
+          />
         </div>
+        <Footer />
       </div>
     )
   }

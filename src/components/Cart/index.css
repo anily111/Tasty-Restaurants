@@ -1,0 +1,128 @@
+.cart-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f9fbfe;
+}
+
+@media only screen and (min-width: 768px) {
+  .cart-content-container {
+    padding: 20px;
+  }
+}
+
+.cart-list-container {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cart-remove-all-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cart-heading {
+  color: #3e4c59;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .cart-heading {
+    font-size: 48px;
+  }
+}
+
+.remove-all-button {
+  background-color: white;
+  color: #0b69ff;
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+
+.payment-container {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.payment-success-image {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.payment-successful {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 20px;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.payment-description {
+  width: 270px;
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .payment-success-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .payment-successful {
+    font-size: 24px;
+  }
+  .payment-description {
+    width: 302px;
+    font-size: 16px;
+  }
+}
+
+.go-to-home-button {
+  background-color: #f7931e;
+  width: 131px;
+  height: 32px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.go-to-home-link {
+  text-decoration: none;
+  border: none;
+}
+
+.cart-horizontal-line {
+  width: 100%;
+  border: 1px solid #cbd2d9;
+  margin-bottom: 20px;
+}
+
+.cart-list-summary {
+  width: 90%;
+  max-width: 1110px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

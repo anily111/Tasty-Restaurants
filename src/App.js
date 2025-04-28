@@ -29,15 +29,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const storedCartList = localStorage.getItem('cartList')
+    const storedCartList = localStorage.getItem('cartData')
     if (storedCartList) {
       this.setState({cartItemsList: JSON.parse(storedCartList)})
     }
   }
 
   componentDidUpdate() {
-    const {cartList} = this.state
-    localStorage.setItem('cartList', JSON.stringify(cartList))
+    const {cartItemsList} = this.state
+    localStorage.setItem('cartData', JSON.stringify(cartItemsList))
   }
 
   incrementCartItemQuantity = id => {}
@@ -48,7 +48,30 @@ class App extends Component {
 
   removeCartItem = id => {}
 
-  addCartItem = foodItem => {}
+  addCartItem = foodItem => {
+    const {cartItemsList} = this.state
+    const foodObject = cartItemsList.find(
+      eachCartItem => eachCartItem.id === foodItem.id,
+    )
+
+    if (foodObject) {
+      this.setState(prevState => ({
+        cartItemsList: prevState.cartItemsList.map(eachCartItem => {
+          if (foodObject.id === eachCartItem.id) {
+            const updatedQuantity = eachCartItem.quantity + foodItem.quantity
+
+            return {...eachCartItem, quantity: updatedQuantity}
+          }
+
+          return eachCartItem
+        }),
+      }))
+    } else {
+      const updatedCartList = [...cartItemsList, foodItem]
+
+      this.setState({cartItemsList: updatedCartList})
+    }
+  }
 
   render() {
     const {cartItemsList} = this.state

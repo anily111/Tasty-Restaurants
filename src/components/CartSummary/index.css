@@ -1,0 +1,49 @@
+.order-summary-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: transparent;
+}
+
+.order-total-heading {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3e4c59;
+}
+
+@media only screen and (min-width: 768px) {
+  .order-total-heading {
+    font-size: 24px;
+  }
+}
+
+.price-order-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.orders-total-price {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: right;
+  color: #3e4c59;
+}
+
+@media only screen and (min-width: 768px) {
+  .orders-total-price {
+    font-size: 18px;
+  }
+}
+
+.place-order-button {
+  background-color: #f7931e;
+  font-size: 16px;
+  font-family: DM Sans;
+  border-radius: 8px;
+  color: #ffffff;
+}

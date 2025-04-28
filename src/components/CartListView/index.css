@@ -1,0 +1,29 @@
+.cart-names-container {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .cart-names-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.cart-name {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 20px;
+  color: #475569;
+}
+
+.cart-list {
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

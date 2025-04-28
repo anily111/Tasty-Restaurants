@@ -70,8 +70,11 @@ The app must have the following functionalities
     - When user clicked the Highest the Restaurants list should be displayed in Highest ratings to Lowest ratings.
   - Users can browse popular Restaurants using pagination buttons.
   - Users should be able to see the footer as shown in Figma.
+   ---Footer-logo- <img src="https://res.cloudinary.com/dri7jmdgw/image/upload/v1745564693/Frame_275_pmeeoq.png" alt="website-footer-logo" />
   - Users should be able to see Home with highlighted text in Navbar.
 - Specific Restaurant details Route
+  -background-image-- <img src="https://res-console.cloudinary.com/dri7jmdgw/thumbnails/v1/image/upload/v1745644299/RnJhbWVfMjc5X2prYnBvYQ==/preview">
+  -restaurent-image-mobile- <img src="https://res.cloudinary.com/dri7jmdgw/image/upload/v1745645021/Anise_and_pepper_near_delicious_dish_jzkoj8.png" alt="restaurant">
   - When users click a restaurant in a particular list, it should open a new page with respective restaurant details.
   - Users should be able to see food items list as shown in the figma screens.
 - Cart Route

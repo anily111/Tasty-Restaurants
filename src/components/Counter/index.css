@@ -1,0 +1,35 @@
+.counter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.decrease-button {
+  width: 18px;
+  height: 18px;
+  color: #334155;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .decrease-button {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.quantity {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 16px;
+  color: #334155;
+  margin-right: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .quantity {
+    font-size: 18px;
+  }
+}

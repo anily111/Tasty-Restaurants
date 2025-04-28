@@ -1,0 +1,103 @@
+.food-item {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .food-item {
+    width: 40%;
+  }
+}
+
+.food-image {
+  width: 180px;
+  height: 120px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .food-image {
+    width: 275px;
+    height: 170px;
+  }
+}
+
+.food-details-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.food-name {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 16px;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.rupee-container {
+  display: flex;
+  align-items: center;
+}
+
+.food-cost {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 16px;
+  color: #334155;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+
+.food-rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.rating-icon {
+  width: 12px;
+  height: 12px;
+  color: #ffcc00;
+  margin-right: 15px;
+}
+
+.add-button {
+  width: 42px;
+  height: 23px;
+  border-radius: 10px;
+  border: 2px solid #ffa412;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  font-size: 16px;
+  margin-bottom: 0px;
+  color: #ffa412;
+}
+
+@media only screen and (min-width: 768px) {
+  .food-name {
+    font-size: 18px;
+  }
+
+  .food-cost {
+    font-size: 16px;
+  }
+
+  .rating-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .add-button {
+    width: 58px;
+    height: 32px;
+  }
+}
