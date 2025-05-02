@@ -8,7 +8,7 @@
 
 @media only screen and (min-width: 768px) {
   .cart-content-container {
-    padding: 20px;
+    padding: 40px;
   }
 }
 
@@ -105,6 +105,7 @@
   height: 32px;
   border-radius: 8px;
   color: #ffffff;
+  border: none;
 }
 
 .go-to-home-link {

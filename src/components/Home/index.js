@@ -36,7 +36,7 @@ class Home extends Component {
     restaurentsList: [],
     apiStatus: apiStatusConstants.initial,
     searchInput: '',
-    sortBy: sortByOptions[0].id,
+    sortBy: sortByOptions[1].id,
     totalPages: 0,
   }
 
@@ -109,7 +109,11 @@ class Home extends Component {
     return (
       <div className="restaurants-list">
         {restaurentsList.map(eachRestaurant => (
-          <RestaurantCard details={eachRestaurant} key={eachRestaurant.id} />
+          <RestaurantCard
+            details={eachRestaurant}
+            key={eachRestaurant.id}
+            data-testid="restaurant-item"
+          />
         ))}
       </div>
     )
@@ -147,7 +151,7 @@ class Home extends Component {
     const {sortBy, searchInput, totalPages} = this.state
     return (
       <div className="home-container">
-        <Header />
+        <Header activePage="home" />
         <HomeOffers />
         <div className="home-contents-container">
           <h1 className="popular-restaurents">Popular Restaurants</h1>

@@ -1,13 +1,4 @@
-.restaurant-link {
-  border: none;
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.restaurant-item {
+.restaurant-card-item {
   list-style-type: none;
   width: 100%;
   margin-bottom: 20px;
@@ -16,24 +7,42 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .restaurant-item {
+  .restaurant-card-item {
     width: 40%;
   }
 }
 
-.restaurant-image {
+.restaurant-card-link {
+  border: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.restaurant-card-image {
   width: 160px;
   height: 130px;
   border-radius: 8px;
   margin-right: 20px;
 }
 
-.restaurant-details-container {
+@media only screen and (min-width: 768px) {
+  .restaurant-card-image {
+    width: 160px;
+    height: 130px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+}
+
+.restaurant-card-details-container {
   background-color: transparent;
   align-self: center;
 }
 
-.restaurant-name {
+.restaurant-card-name {
   font-size: 16px;
   font-family: DM Sans;
   color: #334155;
@@ -42,13 +51,14 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .restaurant-name {
-    font-size: 18px;
+  .restaurant-card-name {
+    font-size: 16px;
+    color: #334155;
   }
 }
 
-.menu-type {
-  font-size: 12px;
+.restaurant-card-menu-type {
+  font-size: 14px;
   font-family: DM Sans;
   color: #64748b;
   font-weight: 400;
@@ -56,17 +66,17 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .menu-type {
-    font-size: 14px;
+  .restaurant-card-menu-type {
+    font-size: 16px;
   }
 }
 
-.ratings-review-container {
+.restaurant-card-ratings-review-container {
   display: flex;
   align-items: center;
 }
 
-.rating-icon {
+.restaurant-card-rating-icon {
   color: #ffcc00;
   width: 12px;
   height: 12px;

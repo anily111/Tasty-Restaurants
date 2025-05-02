@@ -72,13 +72,17 @@ class SpecificRestaurent extends Component {
   renderLoadingView = () => (
     <div
       className="offers-loader-container"
-      data-testid="restaurants-list-loader"
+      data-testid="restaurant-details-loader"
     >
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
   )
 
-  renderFailureView = () => {}
+  renderFailureView = () => (
+    <div className="offers-failure-container">
+      <h1 className="no-offers-heading">NO AVAILABLE RESTAURANT</h1>
+    </div>
+  )
 
   renderSuccessView = () => {
     const {restaurantDetails} = this.state
@@ -89,6 +93,7 @@ class SpecificRestaurent extends Component {
       rating,
       reviewsCount,
       costForTwo,
+      cuisine,
     } = restaurantDetails
     const {foodItems} = restaurantDetails
     console.log(foodItems)
@@ -99,6 +104,7 @@ class SpecificRestaurent extends Component {
           <div className="restaurant-details">
             <h1 className="restaurant-name">{name}</h1>
             <p className="restaurant-location">{location}</p>
+            <p className="restaurant-location">{cuisine}</p>
             <div className="reviews-cost-container">
               <div className="rating-review-container">
                 <div className="rating-icon-container">
@@ -124,6 +130,7 @@ class SpecificRestaurent extends Component {
               foodDetails={eachFoodItem}
               rating={rating}
               key={eachFoodItem.id}
+              data-testid="foodItem"
             />
           ))}
         </ul>
@@ -148,7 +155,7 @@ class SpecificRestaurent extends Component {
   render() {
     return (
       <div className="specific-restaurants-container">
-        <Header />
+        <Header activePage="home" />
         {this.renderSpecificRestaurantDetails()}
         <Footer />
       </div>

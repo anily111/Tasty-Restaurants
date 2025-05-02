@@ -4,19 +4,25 @@ import './index.css'
 
 const RestaurantCard = props => {
   const {details} = props
-  const {name, id, imageUrl, menuType, userRating} = details
+  const {name, id, imageUrl, cuisine, userRating} = details
   const {rating, totalReviews} = userRating
   return (
-    <li className="restaurant-item" data-tesid="restaurant-item" key={id}>
-      <Link to={`/restaurant/${id}`} className="restaurant-link">
-        <img src={imageUrl} className="restaurant-image" alt="restaurant" />
-        <div className="restaurant-details-container">
-          <h1 className="restaurant-name">{name}</h1>
-          <p className="menu-type">{menuType}</p>
-          <div className="ratings-review-container">
-            <FaStar className="rating-icon" />
-            <h1 className="restaurant-name">{rating}</h1>
-            <p className="menu-type">({totalReviews} Reviews)</p>
+    <li className="restaurant-card-item" data-tesid="restaurant-item" key={id}>
+      <Link to={`/restaurant/${id}`} className="restaurant-card-link">
+        <img
+          src={imageUrl}
+          className="restaurant-card-image"
+          alt="restaurant"
+        />
+        <div className="restaurant-card-details-container">
+          <h1 className="restaurant-card-name">{name}</h1>
+          <p className="restaurant-card-menu-type">{cuisine}</p>
+          <div className="restaurant-card-ratings-review-container">
+            <FaStar className="restaurant-card-rating-icon" />
+            <h1 className="restaurant-card-name">{rating}</h1>
+            <p className="restaurant-card-menu-type">
+              ({totalReviews} Reviews)
+            </p>
           </div>
         </div>
       </Link>

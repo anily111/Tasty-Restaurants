@@ -23,6 +23,11 @@ class Header extends Component {
   }
 
   render() {
+    const {activePage} = this.props
+    const homeActiveClass =
+      activePage === 'home' ? 'header-logo-link-home' : 'header-logo-link-cart'
+    const cartActiveClass =
+      activePage === 'cart' ? 'header-logo-link-home' : 'header-logo-link-cart'
     const {isHamburgerClicked} = this.state
     return (
       <nav className="navbar">
@@ -32,7 +37,7 @@ class Header extends Component {
               <img
                 src="https://res.cloudinary.com/dri7jmdgw/image/upload/v1744783340/Frame_274_feb5b4.png"
                 className="header-logo"
-                alt="website login"
+                alt="website logo"
               />
             </Link>
             <h1 className="header-heading">Tasty Kitchens</h1>
@@ -41,12 +46,12 @@ class Header extends Component {
           <div className="links-logout-container">
             <ul className="header-links-list-desktop">
               <li className="header-list-item">
-                <Link to="/" className="header-logo-link-home">
+                <Link to="/" className={homeActiveClass}>
                   Home
                 </Link>
               </li>
               <li className="header-list-item">
-                <Link to="/cart" className="header-logo-link-cart">
+                <Link to="/cart" className={cartActiveClass}>
                   Cart
                 </Link>
               </li>

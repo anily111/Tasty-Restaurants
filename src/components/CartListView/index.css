@@ -19,6 +19,22 @@
   color: #475569;
 }
 
+.cart-quantity {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 20px;
+  color: #475569;
+  padding-left: 170px;
+}
+
+.cart-price {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 20px;
+  color: #475569;
+  padding-right: 10px;
+}
+
 .cart-list {
   width: 100%;
   list-style-type: none;

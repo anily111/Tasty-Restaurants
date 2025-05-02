@@ -7,6 +7,8 @@ import CartSummary from '../CartSummary'
 import Header from '../Header'
 import Footer from '../Footer'
 
+import './index.css'
+
 class Cart extends Component {
   state = {
     isPlaceOrderClicked: false,
@@ -47,7 +49,7 @@ class Cart extends Component {
           const cartListView = () => {
             const showEmptyView = cartList.length === 0
             console.log(showEmptyView)
-            if (showEmptyView === false) {
+            if (showEmptyView) {
               return <EmptyCartView />
             }
             return (
@@ -75,7 +77,7 @@ class Cart extends Component {
           }
           return (
             <>
-              <Header />
+              <Header activePage="cart" />
               <div className="cart-content-container">
                 {isPlaceOrderClicked ? paymentSuccessfulView() : cartListView()}
               </div>

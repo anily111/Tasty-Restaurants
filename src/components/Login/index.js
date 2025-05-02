@@ -93,7 +93,7 @@ class Login extends Component {
     const {showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
-      ;<Redirect to="/" />
+      return <Redirect to="/" />
     }
 
     return (
@@ -106,7 +106,7 @@ class Login extends Component {
         <img
           src="https://res-console.cloudinary.com/dri7jmdgw/thumbnails/v1/image/upload/v1744786401/UmVjdGFuZ2xlXzE0NTZfZmg4bG1z/preview"
           className="tasty-kitchens-image-desktop"
-          alt="website-logo"
+          alt="website logo"
         />
 
         <form className="login-details-container" onSubmit={this.submitForm}>
@@ -115,7 +115,7 @@ class Login extends Component {
             className="login-landing-image"
             alt="website login"
           />
-          <p className="tasty-kitchens-heading">Tasty Kitchens</p>
+          <h1 className="tasty-kitchens-heading">Tasty Kitchens</h1>
           <h1 className="login">Login</h1>
           {this.renderUserNameField()}
           {this.renderPasswordField()}
