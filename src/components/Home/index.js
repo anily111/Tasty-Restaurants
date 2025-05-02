@@ -46,7 +46,9 @@ class Home extends Component {
 
   getRestaurents = async (pageNo = 1) => {
     const {searchInput, sortBy} = this.state
-    const sortByObj = sortByOptions.find(eachSortBy => eachSortBy.id === sortBy)
+    const sortByObj = sortByOptions.find(
+      eachSortBy => eachSortBy.id === parseInt(sortBy, 10),
+    )
     const offset = (pageNo - 1) * 9
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
@@ -140,7 +142,7 @@ class Home extends Component {
   }
 
   onChangeSortby = event => {
-    this.setState({sortBy: event.target.value})
+    this.setState({sortBy: event.target.value}, this.getRestaurents)
   }
 
   onEnterSearchInput = () => {
